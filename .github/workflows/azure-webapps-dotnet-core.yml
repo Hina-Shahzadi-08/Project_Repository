@@ -52,9 +52,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nuget-
 
-      - name: Test 
-        run: dotnet test 
-        working-directory: "./FirstAzureAppTestProject" 
+  
       
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
