@@ -70,13 +70,13 @@ jobs:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
 
-  deploy:
+  deploy_DEV:
     permissions:
       contents: none
     runs-on: ubuntu-latest
     needs: build
-    environment:
-      name: ''
+    environment: 
+      name: 'Dvelopment'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -90,6 +90,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: Project_Repository
-          publish-profile: ${{ secrets.Azure_Publish_Profile}}
+          publish-profile: ${{ secrets.HINA_PUBLISH_PROFILE}}
           package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
