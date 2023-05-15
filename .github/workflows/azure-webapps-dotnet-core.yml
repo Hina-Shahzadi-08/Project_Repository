@@ -52,10 +52,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nuget-
 
-      - name: Build with dotnet 
-        run: dotnet build --configuration Release
-        working-directory: "./MyFirstAzureWebApp" 
-
       - name: Test 
         run: dotnet test 
         working-directory: "./FirstAzureAppTestProject" 
